@@ -1,0 +1,50 @@
+# http://localhost:8080/actuator/gateway/routes
+server:
+  port: 8080
+# spring.cloud.gateway.*
+spring:
+  application:
+    name: apigateway
+  cloud:
+    # A client sends a request to Spring Cloud Gateway. If the request matches a route through its predicates, the Gateway HandlerMapping will send the request to the Gateway WebHandler, which in turn will run the request through a chain of filters.
+    gateway:
+      # For automatic route discovery through Eureka
+      discovery.locator:
+        enabled: true
+        lowerCaseServiceId: true
+      # Route. It’s identified by a unique ID, a collection of predicates deciding whether to follow the route, a URI for forwarding the request if the predicates allow, and a collection of filters applied either before or after forwarding the request downstream.
+      #routes:
+        #- id: customerms
+        #  uri: lb://CUSTOMER-SERVICE
+         # predicates:
+            #apigateway-url/dummy/users -> lb://CUSTOMERMS/customers -> localhost:8081/customers
+            #- Path=/customerms/**  
+         # filters:
+          #  - RewritePath=/customerms/(?<path>.*), /$\{​​​​​​path}​​​​​​ # this removes dummy from path
+        #- id: orderms
+         # uri: lb://order-service
+          #predicates:
+            #apigateway-url/dummy-orderms/orders -> lb://ORDERMS/orders -> localhost:8082/orders
+           # - Path=/orderms/**
+          #filters:
+           # - RewritePath=/orderms/(?<path>.*), /$\{​​​​​​path}​​​​​​ # this removes dummy-orderms from path
+        #- id: productms
+         # uri: http://localhost:8083
+         # predicates:
+            #apigateway-url/static-url/customers/123 -> http://localhost:8081/customers/123
+          #  - Path=/productms/**
+          #filters:
+           # - RewritePath=/productms/(?<path>.*), /$\{​​​​​​path}​​​​​​
+# http://localhost:8080/actuator/gateway/routes
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+logging:
+  level:
+     com.netflix: WARN
+     org.springframework.web: DEBUG
+     com.edu: DEBUG
+
+

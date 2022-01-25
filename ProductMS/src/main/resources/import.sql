@@ -1,0 +1,14 @@
+insert into product_tb (category, p_name, price) values ('stationary','Book','70');
+insert into product_tb (category, p_name, price) values ('clothes','MyShirt','500');
+insert into product_tb (category, p_name, price) values ('clothes','MyPant','900');
+insert into product_tb (category, p_name, price) values ('stationary','pencil','50');
+insert into product_tb (category, p_name, price) values ('shoes','MyShoes','1500');
+insert into PRODUCT_DETAILS_MAPPING (product_id,detail_name,detail_value) values (1,'author','me');
+insert into PRODUCT_DETAILS_MAPPING (product_id,detail_name,detail_value) values (1,'title','The last leaf');
+insert into PRODUCT_DETAILS_MAPPING (product_id,detail_name,detail_value) values (2,'brand','puma');
+insert into PRODUCT_DETAILS_MAPPING (product_id,detail_name,detail_value) values (2,'size','xl');
+insert into PRODUCT_DETAILS_MAPPING (product_id,detail_name,detail_value) values (3,'size','32');
+insert into PRODUCT_DETAILS_MAPPING (product_id,detail_name,detail_value) values (3,'color','blue');
+insert into PRODUCT_DETAILS_MAPPING (product_id,detail_name,detail_value) values (4,'brand','apsara');
+insert into PRODUCT_DETAILS_MAPPING (product_id,detail_name,detail_value) values (5,'size','9');
+insert into PRODUCT_DETAILS_MAPPING (product_id,detail_name,detail_value) values (5,'brand','nike');
